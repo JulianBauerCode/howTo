@@ -3,35 +3,35 @@
 ### Usage
 Unique:
 Create virtual environment, placing a directory "pyStruc" which exists until is is removed manually
-'''bash
+```bash
 virtualenv ~/pyStruc -p python 3.5
-'''
+```
 
 On each startup:
 Activate environments
-'''bash
+```bash
 source ~/pyStruc/bin/activate
-'''
+```
 
 Unique:
 On new environment install packages according to "requirements.txt"
-'''bash
+```bash
 pip install -r requirements.txt
-'''
+```
 
 During session:
 Work on evironment
-'''bash
+```bash
 pip install <packageName>
 python --version
-'''
+```
 
 
 After each session:
 Deactiate virtualenvironment
-'''bash
+```bash
 deactivate
-'''
+```
 
 ### Files
 requirements.txt
@@ -48,14 +48,14 @@ requirements.txt
 ### Usage
 On each startup:
 Set up environment according to Pipfile
-'''bash
+```bash
 pipenv install
-'''
+```
 
 During session:
-'''bash
+```bash
 pipenv install <packageName>
-'''
+```
 ### Files
 Pipfile
 Pipfile.lock
