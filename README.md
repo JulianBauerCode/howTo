@@ -1,5 +1,22 @@
 # howTo
 ## Docstrings
+
+### Multi-line compatible with epydoc, format is called epytext
+https://stackoverflow.com/questions/3898572/what-is-the-standard-python-docstring-format
+```python
+"""
+This is a javadoc style.
+
+@param param1: this is a first param
+@param param2: this is a second param
+@return: this is a description of what is returned
+@raise keyError: raises an exception
+"""
+``` 
+
+
+
+
 ### One-line
 ```python
 def function(a, b):
