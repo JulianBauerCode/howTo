@@ -2,15 +2,15 @@
 ## VirtualEnv
 ### Usage
 Unique:
-Create virtual environment, placing a directory "pyStruc" which exists until is is removed manually
+Create virtual environment, placing a directory "sample" which exists until is is removed manually
 ```bash
-virtualenv ~/pyStruc -p python 3.5
+virtualenv ~/sample -p python 3.5
 ```
 
 On each startup:
 Activate environments
 ```bash
-source ~/pyStruc/bin/activate
+source ~/sample/bin/activate
 ```
 
 Unique:
@@ -36,7 +36,7 @@ deactivate
 ### Files
 requirements.txt
 ### Directories
-~/pyStruc
+~/sample
 
 ### Pro / Con
 + Old, Established
