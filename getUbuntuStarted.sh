@@ -66,7 +66,7 @@
 
 
 ##install basics
-sudo apt-get install tree vim git zsh wget
+sudo apt-get install curl tree vim git zsh wget
 
 ##enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
@@ -99,10 +99,10 @@ git config --global core.editor "vim"
 #Get latest version
 myFileName="Miniconda3-latest-Linux-x86_64.sh"
 
-#wget http://repo.continuum.io/miniconda/$myFileName
+#wget http://repo.continuum.io/miniconda/$myFileName -P $HOME
 
 #Install
-zsh $myFileName
+zsh $HOME/$myFileName
 #If systempath is extended in .bashrc
 #  If systempath is not extended in .zshrc
 #    Copy system path extension from .bashrc to .zshrc
@@ -114,6 +114,10 @@ then
    fi
 fi
 
+##Install some basic conda utilities
+conda install qtconsole
+conda install -c anaconda jupyter
+conda install numpy pandas 
 
 ##Create config files
 ipython profile create
