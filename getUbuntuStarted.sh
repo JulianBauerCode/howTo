@@ -71,7 +71,7 @@ sudo apt-get install tree vim git zsh wget
 ##enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
-gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 1
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
 
 ##Get Oh-my-zsh 
 #https://github.com/robbyrussell/oh-my-zsh
@@ -82,20 +82,70 @@ echo
 
 ##Get Dropbox working
 #Install nautilus add in
-sudo apt-get install nautilus-dropbox
+#sudo apt-get install nautilus-dropbox
 #Download and install dropbox client
-dropbox start -i
+#dropbox start -i
 #Follow instructions in internet browser to log in
 #Set autostart to true
-dropbox start y
+#dropbox start y
 
 ##Configure git
 git config --global user.name "JulianBauerCode"
 git config --global user.email julianbauercode@gmx.de
+git config --global push.default simple
+git config --global core.editor "vim"
+##Install Miniconda
 
-#Install python
-#wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#zsh Minconda3-lastest-Linux-x86_64.sh
+#Get latest version
+myFileName="Miniconda3-latest-Linux-x86_64.sh"
+
+#wget http://repo.continuum.io/miniconda/$myFileName
+
+#Install
+zsh $myFileName
+#If systempath is extended in .bashrc
+#  If systempath is not extended in .zshrc
+#    Copy system path extension from .bashrc to .zshrc
+if grep -q Miniconda $HOME/.bashrc
+then 
+   if ! grep -q Miniconda $HOME/.zshrc
+   then 
+      grep -A 1 Miniconda $HOME/.bashrc >> $HOME/.zshrc;
+   fi
+fi
+
+
+##Create config files
+ipython profile create
+jupyter notebook --generate-config
+
+#Qtconsole
+jupyter qtconsole --generate-config
+myFile="$HOME/.jupyter/jupyter_qtconsole_config.py"
+if ! grep -q fruity $myFile
+then
+   echo  "c.JupyterWidget.syntax_style =\"fruity\"" >> $myFile;
+fi
+
+
+
+##Configure vim
+#Add pathogene (vim add in manager)
+mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle                                
+curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#Enable pathogene
+echo "execute pathogen#infect()\nsyntax on\nfiletype plugin indent on" >> $HOME/.vimrc
+
+#Use pathogene to get
+#file explorer nerdtree
+git clone https://github.com/scrooloose/nerdtree.git $HOME/.vim/bundle/nerdtree
+#git-add-in fugitive
+cd $HOME/.vim/bundle
+git clone https://github.com/tpope/vim-fugitive.git
+vim -u NONE -c "helptags vim-fugitive/doc" -c q
+
+#Enable switching between vim splits using ctr and hjkl
+echo 'nnoremap <C-J> <C-W><C-J>\nnnoremap <C-K> <C-W><C-K>\nnnoremap <C-L> <C-W><C-L>\nnnoremap <C-H> <C-W><C-H>' >> $HOME/.vimrc 
 
 
 
