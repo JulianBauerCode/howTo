@@ -1,4 +1,5 @@
-##Set up ubuntu
+# Set up ubuntu
+
 #[
 #if you would like to use ubuntu and windows on one machine, you have to install windows first
 #create a partition with format ntfs of size 100 GB at the beginning of the hard drive and install windows on it.
@@ -64,32 +65,25 @@
   #select password
 #wait and be happy
 
-
-##install basics
+################################
+# Install basics applications
 sudo apt-get install curl tree vim git zsh wget
 
-##enable workspaces
+# Enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
 
-##Get Oh-my-zsh 
+################################
+# Get Oh-my-zsh 
 #https://github.com/robbyrussell/oh-my-zsh
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 echo
 echo "Restart or (logout and login to ubuntu) is necessary to use zsh as standard shell"
 echo
 
-##Get Dropbox working
-#Install nautilus add in
-#sudo apt-get install nautilus-dropbox
-#Download and install dropbox client
-#dropbox start -i
-#Follow instructions in internet browser to log in
-#Set autostart to true
-#dropbox start y
-
-##Configure git
+################################
+# Configure git
 git config --global user.name "JulianBauerCode"
 git config --global user.email julianbauercode@gmx.de
 git config --global push.default simple
@@ -99,15 +93,14 @@ git config --global diff.tool vimdiff
 # deactivate prompt when using difftool
 git config --global difftool.prompt false
 
+################################
+# Install Miniconda
 
-##Install Miniconda
-
-#Get latest version
+##########
+## Get latest version and install
 myFileName="Miniconda3-latest-Linux-x86_64.sh"
+wget http://repo.continuum.io/miniconda/$myFileName -P $HOME
 
-#wget http://repo.continuum.io/miniconda/$myFileName -P $HOME
-
-#Install
 zsh $HOME/$myFileName
 #If systempath is extended in .bashrc
 #  If systempath is not extended in .zshrc
@@ -120,16 +113,17 @@ then
    fi
 fi
 
-##Install some basic conda utilities
+##########
+## Add some basic conda packages
 conda install qtconsole
 conda install -c anaconda jupyter
 conda install numpy pandas 
 
-##Create config files
+##########
+## Create config files
 ipython profile create
 jupyter notebook --generate-config
-
-#Qtconsole
+### Qtconsole
 jupyter qtconsole --generate-config
 myFile="$HOME/.jupyter/jupyter_qtconsole_config.py"
 if ! grep -q fruity $myFile
@@ -138,25 +132,38 @@ then
 fi
 
 
+################################
+# Configure vim
 
-##Configure vim
-#Add pathogene (vim add in manager)
+## Pathogene (vim add in manager)
+### Get
 mkdir -p $HOME/.vim/autoload $HOME/.vim/bundle                                
 curl -LSso $HOME/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-#Enable pathogene
+### Enable
 echo "execute pathogen#infect()\nsyntax on\nfiletype plugin indent on" >> $HOME/.vimrc
 
-#Use pathogene to get
-#file explorer nerdtree
+## Nerdtree (file manager)
+### Get
 git clone https://github.com/scrooloose/nerdtree.git $HOME/.vim/bundle/nerdtree
-#git-add-in fugitive
+
+## Fugitive (Git wrapper)
 cd $HOME/.vim/bundle
 git clone https://github.com/tpope/vim-fugitive.git
 vim -u NONE -c "helptags vim-fugitive/doc" -c q
 
-#Enable switching between vim splits using ctr and hjkl
+## Enable switching between vim splits using ctr and hjkl
 echo 'nnoremap <C-J> <C-W><C-J>\nnnoremap <C-K> <C-W><C-K>\nnnoremap <C-L> <C-W><C-L>\nnnoremap <C-H> <C-W><C-H>' >> $HOME/.vimrc 
 
 
 
+
+################################
+# Get Dropbox
+## Install nautilus add in
+#sudo apt-get install nautilus-dropbox
+## Download and install dropbox client
+#dropbox start -i
+## Follow instructions in internet browser to log in
+## Set autostart to true
+#dropbox start y
 
