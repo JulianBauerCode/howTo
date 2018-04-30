@@ -94,6 +94,12 @@ git config --global user.name "JulianBauerCode"
 git config --global user.email julianbauercode@gmx.de
 git config --global push.default simple
 git config --global core.editor "vim"
+#Set vimdiff as default diff-tool of command "git difftool [HEAD] <filename>"
+git config --global diff.tool vimdiff
+# deactivate prompt when using difftool
+git config --global difftool.prompt false
+
+
 ##Install Miniconda
 
 #Get latest version
