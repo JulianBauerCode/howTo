@@ -67,7 +67,8 @@
 
 ################################
 # Install basics applications
-sudo apt-get install curl tree vim git zsh wget libreoffice
+sudo apt-get install curl tree vim-gtk git zsh wget libreoffice
+#vim-gtk is able to copy and paste to Ubuntu-GUI-clipboard
 
 # Enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
