@@ -67,7 +67,7 @@
 
 ################################
 # Install basics applications
-sudo apt-get install curl tree vim git zsh wget
+sudo apt-get install curl tree vim git zsh wget libreoffice
 
 # Enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
