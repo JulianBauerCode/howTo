@@ -2,7 +2,7 @@
 ## VirtualEnv
 ### Usage
 Unique:
-Create virtual environment, placing a directory "sample" which exists until is is removed manually
+Create virtual environment, placing a directory "sample" which exists until it is removed manually
 ```bash
 virtualenv ~/sample -p python 3.5
 ```
