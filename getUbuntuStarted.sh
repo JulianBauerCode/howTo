@@ -125,10 +125,22 @@ ipython profile create
 jupyter notebook --generate-config
 ### Qtconsole
 jupyter qtconsole --generate-config
+
+##########
+## Set style Qtconsole
 myFile="$HOME/.jupyter/jupyter_qtconsole_config.py"
 if ! grep -q fruity $myFile
 then
    echo  "c.JupyterWidget.syntax_style =\"fruity\"" >> $myFile;
+fi
+## Improve style Qtconsole (especially traceback color)
+myFile="$HOME/.python/profile_default/startup/me.py"
+#Try to create myFile and create if it does not already exist
+touch $myFile
+#If commands are not already in file, add commands
+if ! grep -q "%colors Linux" $myFile
+then
+   echo  "## Improve colors of syntax highlighting and traceback\nget_ipython().magic(u\"%colors Linux\")" >> $myFile;
 fi
 
 
@@ -154,6 +166,19 @@ vim -u NONE -c "helptags vim-fugitive/doc" -c q
 ## Enable switching between vim splits using ctr and hjkl
 echo 'nnoremap <C-J> <C-W><C-J>\nnnoremap <C-K> <C-W><C-K>\nnnoremap <C-L> <C-W><C-L>\nnnoremap <C-H> <C-W><C-H>' >> $HOME/.vimrc 
 
+## Use spaces instead of tabs
+myFile="$HOME/.vimrc"
+if ! grep -q "Use spaces instead" $myFile
+then
+   echo  "\" Use spaces instead of tabs\nset expandtab\nset tabstop=4\n" >> $myFile;
+fi
+
+## Set encodings
+myFile="$HOME/.vimrc"
+if ! grep -q "Set encodings" $myFile
+then
+   echo  "\" Set encodings\n\" https://stackoverflow.com/questions/16507777/set-encoding-and-fileencoding-to-utf-8-in-vim\n\" Set encoding which is shown in output\nset encoding=utf-8\n\" Set encoding of files\nset fileencoding=utf-8\n" >> $myFile;
+fi
 
 
 
