@@ -75,6 +75,9 @@ sudo apt-get install curl tree vim-gtk git zsh wget libreoffice
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 4
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
 
+# Set defautl view of nautilus to list-view
+sudo gsettings set org.gnome.nautilus.preferences default-folder-viewer 'list-view'
+
 ################################
 # Get Oh-my-zsh 
 #https://github.com/robbyrussell/oh-my-zsh
