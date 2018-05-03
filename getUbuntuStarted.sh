@@ -67,7 +67,7 @@
 
 ################################
 # Install basics applications
-sudo apt-get install curl tree vim-gtk git zsh wget libreoffice
+sudo apt-get install curl tree vim-gtk git zsh wget libreoffice texmaker texlive-lang-german
 #vim-gtk is able to copy and paste to Ubuntu-GUI-clipboard
 
 # Enable workspaces
