@@ -69,5 +69,26 @@ unknown directory
 
 
 
+## conda (if conda is added to system path)
+
+### Create environment
+conda create --name geo python=3.6
+
+### Activate
+source activate geo
+
+### Deactivate
+source deactivate
+
+### Identify environment
+conda info --env
+
+
+## conda (if conda is NOT added to system path)
+
+~/miniconda3/bin/conda create --name geo2 python=3.6
+source ~/miniconda3/bin/activate ~/miniconda3/envs/geo2
+
+
 
 
