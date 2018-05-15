@@ -198,6 +198,17 @@ if ! grep -q " Show line numbers" $myFile
 then
    echo  "\" Show line numbers. To unset use \":set nonu\"\nset nu\n" >> $myFile;
 fi
+
+
+## Show colorcolumn for Pep8
+myFile="$HOME/.vimrc"
+if ! grep -q " Show colorcolumn for Pep8" $myFile
+then
+   echo  "\" Show colorcolumn for Pep8\nset colorcolumn=72\nhighlight ColorColumn ctermbg=0 guibg=lightgrey\n" >> $myFile;
+fi
+
+
+
 ################################
 # Get Dropbox
 ## Install nautilus add in
