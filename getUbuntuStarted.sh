@@ -192,6 +192,12 @@ then
    echo  "\" Enable highlighting of all word occurrences\nset hlsearch\n" >> $myFile;
 fi
 
+## Show line numbers
+myFile="$HOME/.vimrc"
+if ! grep -q " Show line numbers" $myFile
+then
+   echo  "\" Show line numbers. To unset use \":set nonu\"\nset nu\n" >> $myFile;
+fi
 ################################
 # Get Dropbox
 ## Install nautilus add in
