@@ -185,6 +185,12 @@ then
 fi
 
 
+## Enable highlighting of all word occurrences
+myFile="$HOME/.vimrc"
+if ! grep -q " Enable highlighting of all " $myFile
+then
+   echo  "\" Enable highlighting of all word occurrences\nset hlsearch\n" >> $myFile;
+fi
 
 ################################
 # Get Dropbox
