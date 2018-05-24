@@ -69,6 +69,7 @@
 # Install basics applications
 sudo apt-get install curl tree vim-gtk git zsh wget libreoffice texmaker texlive-lang-german
 #vim-gtk is able to copy and paste to Ubuntu-GUI-clipboard
+#sudo apt-get install xul-ext-lightning #installs lightning calendar plugin for thunderbird
 
 # Enable workspaces
 #https://askubuntu.com/questions/260510/how-do-i-turn-on-workspaces-why-do-i-only-have-one-workspace
