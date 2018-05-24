@@ -1,0 +1,85 @@
+span.uicontrol{
+    font-weight:700;
+    font-family: sans-serif;
+}
+
+.keyword.shortcut{
+    
+    background-color: #efefef;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 18px;
+    overflow-x: auto;
+    padding: 2px 5px;
+    white-space: pre;
+    
+}
+
+p.shortdesc{
+    font-style: italic;
+}
+
+
+.module section{
+    margin-top: 0px;
+    margin-bottom: 20px;
+
+}
+
+
+
+article.nested1{
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+}
+
+
+article.nested1 > *{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.searchbox{
+    display:none;
+    display:none;
+}
+
+.statusMessage{
+    display:none;
+}
+
+.statusMessage.block{
+    display:block;
+}
+
+.stepresult::before {
+   
+    content: "→";
+    padding-right: 0.5em;
+    
+
+}
+.result::before {
+    
+    content: "✔";
+    padding-right: 0.5em;
+    
+    
+}
+
+.wintitle {
+    font-style: italic;
+    color: slategrey;
+}
+
+span.userinput, span.wintitle, span.uicontrol {
+    color: #999999;
+}
+
+.prereqtitle {
+    display: none;   
+}
+
+
