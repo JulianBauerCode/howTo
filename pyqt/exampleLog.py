@@ -22,7 +22,8 @@ class MyDialog(QtGui.QDialog, QPlainTextEditLogger):
 
         logTextBox = QPlainTextEditLogger(self)
         # You can format what is printed to text box
-        logTextBox.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        #logTextBox.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        logTextBox.setFormatter(logging.Formatter(''))
         logging.getLogger().addHandler(logTextBox)
         # You can control the logging level
         logging.getLogger().setLevel(logging.DEBUG)
