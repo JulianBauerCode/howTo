@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+basics
+Systemmonitor
+	top
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+get size of directory
+du -h
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Create VPN to KIT using JuniperNetworkConnect
+jnc --nox kit
+jnc stop
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+#VPN using openvpn KIT
+sudo openvpn --config ~/scc.ovpn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Open file with standard application
+xdg-open <file with file ending>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Open (gui-) application in background
+nohup <command> &
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Link name with executable
+sudo ln -s /usr/local/MATLAB/R2013b/bin/matlab matlab
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Install brother printer and scanner
+Use driver install tool
+
+Search for specific printer
+http://support.brother.com/g/b/productsearch.aspx?c=eu_ot&lang=en&content=dl
+Select operating system
+Select "Driver install tool", it's easy
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Scan
+
+Use gscan2pdf
+https://wiki.ubuntuusers.de/gscan2pdf/
+If necessary, use simple-scan
+sudo simple-scan
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Delete non empty directory
+
+Ask before deleting
+rm -ri directoryname
+Force remove
+rm -rf directoryname
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Concatenate pdfs
+
+pdftk foo.pdf bar.pdf cat output foobar.pdf
+pdftk 01.pdf 02.pdf 03.pdf 04.pdf 05.pdf 06.pdf 07.pdf 08.pdf 09.pdf 10.pdf 11.pdf 12.pdf 13.pdf 14.pdf 15.pdf 16.pdf 17.pdf 18.pdf 19.pdf 20.pdf 21.pdf 22.pdf 23.pdf 24.pdf 25.pdf cat output pe_werk_gesamt.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Combine pictures
+
+sudo apt-get install imagemagick imagemagick-doc
+convert *.JPG -rotate 90 ausgabe.pdf
+convert *.jpg -rotate 90 ausgabe.pdf
+convert 01.jpg 02.jpg ausgabe.pdf
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Add path to application to global path
+i.e. Enable running application from everywhere 
+
+to enable execution of all executable files in directory $HOME/abaqus/Commands, 
+this directory has to be added to systemvariable $PATH.
+To do so, modify file .bashrc which is located in home directory
+cd ~
+gedit .bashrc
+and add
+
+if [ -d "$HOME/abaqus/Commands" ] ; then
+    PATH="$HOME/abaqus/Commands:$PATH"
+fi
+
+to this file. if directory "$HOME/abaqus/Commands" exists, $PATH will be extended by "$HOME/abaqus/Commands".
+Changes in .bashrc will be usable after execution of
+source .bashrc
+and variable $PATH can be displayed by
+echo $PATH
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+gnome-system-monitor
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Connect to machine at ITM from remote
+
+Create VPN
+ping imfpol03.mach.uni-karlsruhe.de
+ssh -l bauer imfpool03.mach.uni-karlsruhe.de
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Copy file to / from local and remote using scp
+
+scp [from ] [to]
+(adress file test.txt in home folder at bauer with : bauer@imfpool03.mach.uni-karlsruhe.de:/~/test.txt)
+
+examples:
+scp test.txt bauer@imfpool03.mach.uni-karlsruhe.de:	
+#if executed at local bertold: copies file test.txt from current folder of local terminal at bertold to home directory of remote bauer
+
+scp bauer@impool03.mach.uni-karlsruhe.de:~/test02.txt ~	
+#if executed at local bertold: copies file test02.txt from hoem directory at remote bauer to home directory at local bertold
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Install latex
+
+sudo apt-get install texmaker
+sudo apt-get install texlive-fonts-recommended
+eventuell : sudo add-apt-repository ppa:texlive-backports/ppa
+und danach outdated language package: sudo apt-get install texlive-lang-german
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+enable usage of gnuplottex with texmaker and texlive (tex distribution for linux)
+
+texmaker>configure texmaker
+insert -shell-escape to make it look like:
+"latex -shell-escape -interaction=nonstopmode %.tex"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Connect via VPN to KIT using openvpn and using file "scc.ovpn" on Desktop
+
+open terminal on Desktop and run
+	openvpn --config ~/Desktop/scc.ovpn
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Installiere eclipse mit pydev(Entwicklungsumgebung Python) und egit(Git-Implementierung fuer Eclipse)
+unter Ubuntu 16.04 aus Paketquellen.
+
+Anmerkung: Wird eclipse aus den offiziellen Paketquellen unter Ubuntu 16.04 installiert, dann ist die Versionsnummer 3.8.1 (Nachzuschauen nach Installation von Eclipse unter : HELP > About Eclipse Platform).
+Die aktuellsten Versionen von pydev und egit sind nicht kompatibel mit der Eclipseversion 3.8.1.
+Bei Verwendung von Eclipse 3.8.1 mit pydev und egit sind deshalb entsprechend alte, unterstuetzte Versionen von pydev und egit zu installieren.
+
+Installation pydev:
+https://stackoverflow.com/questions/19894995/pydev-perspective-not-showing-after-install-for-eclipse
+>>> Nutze den Link  
+http://www.pydev.org/update_sites/4.5.5 
+bei der Installation von pydev unter Eclipse > Help > Install New Software > Work with:
+
+Anschließend ist der Python interpreter zu configurieren:
+Eclipse > Window > Preferences > Pydev > Interpreters > Python > Hier ist der Advanced Auto-Config - Assistent hilfreich um zwischen den Pythonversionen 2.7 und 3.0 bzw. 3.5 zu waehlen.
+
+Installation von egit:
+Nutze den p2-Link http://archive.eclipse.org/egit/updates-2.3 um die Egit-Version 2.3.1.201302201838-r 	 zu installieren.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Take picture from webcam
+
+ffmpeg -f video4linux2 -s 640x480 -i /dev/video1 -ss 00:00:01 -frames 1 ./01.jpg
+
+
+
+
+
