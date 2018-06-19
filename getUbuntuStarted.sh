@@ -67,7 +67,7 @@
 
 ################################
 # Install basics applications
-sudo apt-get install curl tree vim-gtk git zsh wget libreoffice texmaker texlive-lang-german
+sudo apt-get install curl tree vim-gtk git zsh wget libreoffice texmaker texlive-lang-german texlive-science texstudio
 #vim-gtk is able to copy and paste to Ubuntu-GUI-clipboard
 #sudo apt-get install xul-ext-lightning #installs lightning calendar plugin for thunderbird
 
