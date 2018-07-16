@@ -1,0 +1,11 @@
+# Enable non-transparent abaqus cae interface
+#XLIB_SKIP_ARGB_VISUALS=1
+#export XLIB_SKIP_ARGB_VISUALS
+alias enableAbaqusCae='XLIB_SKIP_ARGB_VISUALS=1; export XLIB_SKIP_ARGB_VISUALS'
+
+# Start Abaqus CAE
+alias startAbaqusCae='abaqus cae -mesa'
+
+# Enable and start Abaqus CAE
+alias abaCae='enableAbaqusCae;startAbaqusCae'
+
