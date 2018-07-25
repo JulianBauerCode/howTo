@@ -9,3 +9,7 @@ alias startAbaqusCae='abaqus cae -mesa'
 # Enable and start Abaqus CAE
 alias abaCae='enableAbaqusCae;startAbaqusCae'
 
+# Shortcut to open file with standard application
+#alias op='gnome-open'
+alias op='nohup gnome-open >/dev/null 2>&1'
+
