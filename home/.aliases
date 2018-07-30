@@ -1,3 +1,9 @@
+# Shortcut to open file with standard application
+#alias op='gnome-open'
+alias op='nohup gnome-open >/dev/null 2>&1'
+
+##### Abaqus
+
 # Enable non-transparent abaqus cae interface
 #XLIB_SKIP_ARGB_VISUALS=1
 #export XLIB_SKIP_ARGB_VISUALS
@@ -6,16 +12,14 @@ alias enableAbaqusCae='XLIB_SKIP_ARGB_VISUALS=1; export XLIB_SKIP_ARGB_VISUALS'
 # Start Abaqus CAE
 alias startAbaqusCae='abaqus cae -mesa'
 
-# Enable and start Abaqus CAE
-alias abaCae='nohup enableAbaqusCae;startAbaqusCae >/dev/null 2>&1'
-
-# Enable and start Abaqus CAE
+# Enable and start Abaqus CAE verbose blocking terminal
 alias abaCaeV='enableAbaqusCae;startAbaqusCae'
 
-# Shortcut to open file with standard application
-#alias op='gnome-open'
-alias op='nohup gnome-open >/dev/null 2>&1'
-
+# Enable and start Abaqus CAE
+abaCae() {
+    enableAbaqusCae
+    nohup abaqus cae >/dev/null 2>&1 &
+}
 
 # Enable Call of Abaqus Cae with gui and script
 abaCaeScript() {
@@ -24,7 +28,7 @@ abaCaeScript() {
     nohup abaqus cae script="$1" >/dev/null 2>&1 &
 }
 
-# Enable Call of Abaqus Cae with gui and script verbose
+# Enable Call of Abaqus Cae with gui and script verbose blocking terminal
 abaCaeScriptV() {
     enableAbaqusCae
     #do things with parameters like $1 such as
