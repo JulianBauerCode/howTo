@@ -1,19 +1,32 @@
 # Shortcut to open file with standard application
 #alias op='gnome-open'
-alias op='nohup gnome-open >/dev/null 2>&1'
+#alias op='nohup gnome-open >/dev/null 2>&1'
+op() {
+    nohup gnome-open "$1" >/dev/null 2>&1
+}
 
 ##### Abaqus
 
 # Enable non-transparent abaqus cae interface
 #XLIB_SKIP_ARGB_VISUALS=1
 #export XLIB_SKIP_ARGB_VISUALS
-alias enableAbaqusCae='XLIB_SKIP_ARGB_VISUALS=1; export XLIB_SKIP_ARGB_VISUALS'
+#alias enableAbaqusCae='XLIB_SKIP_ARGB_VISUALS=1; export XLIB_SKIP_ARGB_VISUALS'
+enableAbaqusCae() {
+    XLIB_SKIP_ARGB_VISUALS=1; export XLIB_SKIP_ARGB_VISUALS
+}
 
 # Start Abaqus CAE
-alias startAbaqusCae='abaqus cae -mesa'
+#alias startAbaqusCae='abaqus cae -mesa'
+startAbaqusCae() {
+    abaqus cae -mesa
+}
 
 # Enable and start Abaqus CAE verbose blocking terminal
-alias abaCaeV='enableAbaqusCae;startAbaqusCae'
+#alias abaCaeV='enableAbaqusCae;startAbaqusCae'
+abaCaeV() {
+    enableAbaqusCae
+    startAbaqusCae
+}
 
 # Enable and start Abaqus CAE
 abaCae() {
