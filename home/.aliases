@@ -2,7 +2,7 @@
 #alias op='gnome-open'
 #alias op='nohup gnome-open >/dev/null 2>&1'
 op() {
-    nohup gnome-open "$1" >/dev/null 2>&1
+    nohup xdg-open "$1" >/dev/null 2>&1
 }
 
 ##### Abaqus
