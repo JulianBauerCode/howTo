@@ -18,7 +18,7 @@
 	<style bold="true" foreground="#cdcaa9" name="def:type"/>
 	<style background="#ab0000" foreground="#ffffff" name="def:error"/>
 	<style bold="true" foreground="#ff0086" name="def:identifier"/>
-    <style name="selection" background="#4f5459" />
+    	<style name="selection" background="#4f5459" />
 
 	<color name="comment_color" value="#608b4e"/>
 	<color name="number_color" value="#b5cea8"/>
@@ -30,9 +30,8 @@
 	<color name="text_bg" value="#1e1e1e"/>
 	<color name="line_highlight" value="#0f0f0f"/>
 	<color name="line_numbers" value="#2b91af"/>
-    <color name="selection_color" value="#264f78"/>
+    	<color name="selection_color" value="#264f78"/>
 
-    <style name="bracket-match" foreground="text_bg" background="keyword_color"/>
+    	<style name="bracket-match" foreground="text_bg" background="keyword_color"/>
 	<style name="bracket-mismatch" background="error_color"/>
-    <style name="search-match" foreground="comment_color" background="text_fg"/>
 </style-scheme>
