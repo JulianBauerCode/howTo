@@ -19,5 +19,20 @@
 	<style background="#ab0000" foreground="#ffffff" name="def:error"/>
 	<style bold="true" foreground="#ff0086" name="def:identifier"/>
     <style name="selection" background="#4f5459" />
-</style-scheme>
 
+	<color name="comment_color" value="#608b4e"/>
+	<color name="number_color" value="#b5cea8"/>
+	<color name="string_color" value="#d69d62"/>
+	<color name="boolean_color" value="#d69d62"/>
+	<color name="keyword_color" value="#4c9cd6"/>
+	<color name="error_color" value="#ff3333"/>
+	<color name="text_fg" value="#ffffff"/>
+	<color name="text_bg" value="#1e1e1e"/>
+	<color name="line_highlight" value="#0f0f0f"/>
+	<color name="line_numbers" value="#2b91af"/>
+    <color name="selection_color" value="#264f78"/>
+
+    <style name="bracket-match" foreground="text_bg" background="keyword_color"/>
+	<style name="bracket-mismatch" background="error_color"/>
+    <style name="search-match" foreground="comment_color" background="text_fg"/>
+</style-scheme>
